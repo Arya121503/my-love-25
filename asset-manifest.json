@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/my-love-25/static/css/main.2b808cad.css",
-    "main.js": "/my-love-25/static/js/main.d66a1856.js",
+    "main.css": "/my-love-25/static/css/main.beb86d7c.css",
+    "main.js": "/my-love-25/static/js/main.da56bfd9.js",
     "static/js/453.03fb1d54.chunk.js": "/my-love-25/static/js/453.03fb1d54.chunk.js",
+    "static/media/happy-birthday-to-you.mp3": "/my-love-25/static/media/happy-birthday-to-you.3691329355cf128905d7.mp3",
+    "static/media/sharenomor.jpg": "/my-love-25/static/media/sharenomor.8c54d34b6cbfc56bdd41.jpg",
+    "static/media/vcnugas.jpg": "/my-love-25/static/media/vcnugas.8f0b2e307c14138cf4ed.jpg",
+    "static/media/vchabisbelanja.jpg": "/my-love-25/static/media/vchabisbelanja.942a7dbea4ec90708c7c.jpg",
+    "static/media/firsttime-chatting.png": "/my-love-25/static/media/firsttime-chatting.1e05f081ade6a7e721d9.png",
+    "static/media/jadian.png": "/my-love-25/static/media/jadian.726b46f3227be468cdf5.png",
     "index.html": "/my-love-25/index.html",
-    "main.2b808cad.css.map": "/my-love-25/static/css/main.2b808cad.css.map",
-    "main.d66a1856.js.map": "/my-love-25/static/js/main.d66a1856.js.map",
+    "main.beb86d7c.css.map": "/my-love-25/static/css/main.beb86d7c.css.map",
+    "main.da56bfd9.js.map": "/my-love-25/static/js/main.da56bfd9.js.map",
     "453.03fb1d54.chunk.js.map": "/my-love-25/static/js/453.03fb1d54.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b808cad.css",
-    "static/js/main.d66a1856.js"
+    "static/css/main.beb86d7c.css",
+    "static/js/main.da56bfd9.js"
   ]
 }
