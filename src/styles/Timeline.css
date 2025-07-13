@@ -232,6 +232,208 @@
   font-weight: 300;
 }
 
+/* Timeline Beautiful Ending Styles */
+.timeline-ending {
+  margin-top: 4rem !important;
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 300px !important;
+  background: rgba(255, 240, 245, 0.3) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+}
+
+.timeline-conclusion {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.95)) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 30px !important;
+  padding: 3rem !important;
+  border: 2px solid rgba(214, 51, 132, 0.2) !important;
+  box-shadow: 
+    0 20px 60px rgba(214, 51, 132, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  display: block !important;
+  min-height: 200px !important;
+}
+
+.timeline-conclusion::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff69b4, #ff1493, #d63384, #ff69b4);
+  border-radius: 32px;
+  z-index: -1;
+  animation: gradient-border 3s ease infinite;
+  background-size: 300% 300%;
+}
+
+.timeline-conclusion::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="end-hearts" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><text x="10" y="15" text-anchor="middle" font-size="12" fill="%23ffb6c1" opacity="0.05">💕</text></pattern></defs><rect width="100" height="100" fill="url(%23end-hearts)"/></svg>');
+  pointer-events: none;
+  border-radius: 30px;
+}
+
+.conclusion-content {
+  position: relative !important;
+  z-index: 2 !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.infinity-symbol {
+  font-size: 4rem !important;
+  color: #d63384 !important;
+  margin-bottom: 1rem !important;
+  animation: rotate 4s linear infinite !important;
+  text-shadow: 2px 2px 4px rgba(214, 51, 132, 0.3) !important;
+  display: block !important;
+}
+
+.timeline-conclusion h3 {
+  font-size: 2.5rem !important;
+  color: #d63384 !important;
+  margin-bottom: 2rem !important;
+  font-weight: 700 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+  display: block !important;
+}
+
+.conclusion-text {
+  margin-bottom: 2rem !important;
+  display: block !important;
+}
+
+.conclusion-text p {
+  font-size: 1.2rem !important;
+  line-height: 1.8 !important;
+  color: #333 !important;
+  margin-bottom: 1.5rem !important;
+  font-style: italic !important;
+  display: block !important;
+}
+
+.future-promise {
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 182, 193, 0.1)) !important;
+  padding: 1.5rem !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 105, 180, 0.2) !important;
+  font-weight: 600 !important;
+  color: #d63384 !important;
+  display: block !important;
+}
+
+.heart-divider {
+  display: inline-block !important;
+  margin: 0 0.5rem !important;
+  animation: heartbeat 2s ease-in-out infinite !important;
+}
+
+.memory-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  border: 1px solid rgba(214, 51, 132, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d63384;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.to-be-continued {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.continue-text {
+  font-size: 1.5rem;
+  color: #d63384;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.floating-hearts-end {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.floating-hearts-end span {
+  font-size: 2rem;
+  animation: float-heart 3s ease-in-out infinite;
+}
+
+.floating-hearts-end span:nth-child(1) { animation-delay: 0s; }
+.floating-hearts-end span:nth-child(2) { animation-delay: 0.5s; }
+.floating-hearts-end span:nth-child(3) { animation-delay: 1s; }
+.floating-hearts-end span:nth-child(4) { animation-delay: 1.5s; }
+.floating-hearts-end span:nth-child(5) { animation-delay: 2s; }
+
+/* Animations for Timeline Ending */
+@keyframes gradient-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes float-heart {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateY(-15px) rotate(180deg); 
+    opacity: 1;
+  }
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .timeline {
@@ -295,5 +497,40 @@
   .timeline-content p {
     font-size: 1rem;
     line-height: 1.6;
+  }
+  
+  .timeline-conclusion {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .infinity-symbol {
+    font-size: 3rem;
+  }
+  
+  .timeline-conclusion h3 {
+    font-size: 2rem;
+  }
+  
+  .conclusion-text p {
+    font-size: 1.1rem;
+  }
+  
+  .memory-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .continue-text {
+    font-size: 1.3rem;
+  }
+  
+  .floating-hearts-end span {
+    font-size: 1.5rem;
   }
 }

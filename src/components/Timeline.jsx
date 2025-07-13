@@ -113,6 +113,80 @@ const Timeline = () => {
             </div>
           </div>
         ))}
+        
+        {/* Timeline Ending as Regular Item */}
+        <div 
+          className="timeline-item timeline-ending-item animate-in"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 240, 245, 0.95))',
+            borderRadius: '30px',
+            padding: '3rem',
+            border: '2px solid rgba(214, 51, 132, 0.2)',
+            boxShadow: '0 20px 60px rgba(214, 51, 132, 0.1)',
+            margin: '4rem auto',
+            maxWidth: '800px',
+            textAlign: 'center'
+          }}
+        >
+          <div style={{color: '#d63384', fontSize: '4rem', marginBottom: '1rem'}}>
+            ∞
+          </div>
+          <h3 style={{fontSize: '2.5rem', color: '#d63384', marginBottom: '2rem', fontWeight: '700'}}>
+            Dan masih banyak lagi...
+          </h3>
+          <p style={{fontSize: '1.2rem', lineHeight: '1.8', color: '#333', marginBottom: '1.5rem', fontStyle: 'italic'}}>
+            Ini hanya sebagian kecil dari ribuan momen indah yang telah kita lalui bersama. 
+            Setiap detik bersamamu adalah kenangan yang berharga, setiap tawa dan air mata 
+            telah menjadi bagian dari cerita cinta kita yang tak akan pernah berakhir.
+          </p>
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 182, 193, 0.1))',
+            padding: '1.5rem',
+            borderRadius: '20px',
+            border: '1px solid rgba(255, 105, 180, 0.2)',
+            fontWeight: '600',
+            color: '#d63384',
+            marginBottom: '2rem'
+          }}>
+            💕 Untuk semua kenangan yang belum tercipta, semua petualangan yang menanti, 
+            dan semua mimpi yang akan kita wujudkan bersama... 💕
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '2rem',
+            margin: '2rem 0',
+            padding: '2rem',
+            background: 'rgba(255, 255, 255, 0.6)',
+            borderRadius: '20px',
+            border: '1px solid rgba(214, 51, 132, 0.1)'
+          }}>
+            <div style={{textAlign: 'center'}}>
+              <div style={{fontSize: '3rem', fontWeight: '700', color: '#d63384', marginBottom: '0.5rem'}}>∞</div>
+              <div style={{fontSize: '1rem', color: '#666', fontWeight: '600', textTransform: 'uppercase'}}>Kenangan Indah</div>
+            </div>
+            <div style={{textAlign: 'center'}}>
+              <div style={{fontSize: '3rem', fontWeight: '700', color: '#d63384', marginBottom: '0.5rem'}}>∞</div>
+              <div style={{fontSize: '1rem', color: '#666', fontWeight: '600', textTransform: 'uppercase'}}>Momen Bahagia</div>
+            </div>
+            <div style={{textAlign: 'center'}}>
+              <div style={{fontSize: '3rem', fontWeight: '700', color: '#d63384', marginBottom: '0.5rem'}}>1</div>
+              <div style={{fontSize: '1rem', color: '#666', fontWeight: '600', textTransform: 'uppercase'}}>Cinta Sejati</div>
+            </div>
+          </div>
+          <div style={{marginTop: '2rem'}}>
+            <div style={{fontSize: '1.5rem', color: '#d63384', fontWeight: '600', fontStyle: 'italic', marginBottom: '1rem'}}>
+              To be continued...
+            </div>
+            <div style={{display: 'flex', justifyContent: 'center', gap: '1rem'}}>
+              <span style={{fontSize: '2rem'}}>💖</span>
+              <span style={{fontSize: '2rem'}}>💕</span>
+              <span style={{fontSize: '2rem'}}>💗</span>
+              <span style={{fontSize: '2rem'}}>💘</span>
+              <span style={{fontSize: '2rem'}}>💝</span>
+            </div>
+          </div>
+        </div>
       </div>
       
       <ImageModal 
