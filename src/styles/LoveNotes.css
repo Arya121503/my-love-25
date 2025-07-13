@@ -1,0 +1,188 @@
+/* src/styles/LoveNotes.css */
+.love-notes-container {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.love-notes-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(253, 203, 110, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 234, 167, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.love-notes-container h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #d63384;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.love-note {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 182, 193, 0.3);
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+  transform-origin: center;
+}
+
+.love-note.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.love-note.hidden {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.note-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(214, 51, 132, 0.2);
+  padding-bottom: 1rem;
+}
+
+.note-header h3 {
+  font-size: 1.8rem;
+  color: #d63384;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.note-date {
+  font-size: 1rem;
+  color: #ff69b4;
+  font-style: italic;
+  background: rgba(255, 105, 180, 0.1);
+  padding: 0.25rem 1rem;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.note-message {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.8;
+  margin: 2rem 0;
+  font-weight: 300;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.note-signature {
+  text-align: right;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(214, 51, 132, 0.2);
+}
+
+.note-signature span:first-child {
+  display: block;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.signature {
+  font-size: 1.2rem;
+  color: #d63384;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.note-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.note-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #d63384;
+  color: #d63384;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.note-btn:hover {
+  background: #d63384;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
+}
+
+.note-indicators {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.indicator {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.indicator.active {
+  opacity: 1;
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 8px rgba(214, 51, 132, 0.4));
+}
+
+.indicator:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .love-note {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .note-message {
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .note-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .note-indicators {
+    order: -1;
+  }
+}

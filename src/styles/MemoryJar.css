@@ -1,0 +1,347 @@
+/* src/styles/MemoryJar.css */
+.memory-jar-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.memory-jar-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><text x="12.5" y="18" text-anchor="middle" font-size="16" fill="%23ffffff" opacity="0.1">✨</text></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+  pointer-events: none;
+}
+
+.memory-jar-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.memory-jar-section h2 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: slideInDown 1s ease-out;
+}
+
+.memory-jar-section .section-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  font-style: italic;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.memory-jar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.memory-jar {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.memory-jar:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.memory-jar.shake {
+  animation: shakeJar 1s ease-in-out;
+}
+
+.jar-lid {
+  width: 180px;
+  height: 30px;
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  border-radius: 90px 90px 15px 15px;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  border: 3px solid #e6c200;
+}
+
+.lid-shine {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  width: 120px;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  border-radius: 4px;
+}
+
+.jar-body {
+  width: 200px;
+  height: 250px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border-radius: 0 0 100px 100px;
+  position: relative;
+  margin: -5px auto 0;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 2px 10px rgba(255, 255, 255, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.jar-content {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.memory-particle {
+  font-size: 1.5rem;
+  animation: float-particle 4s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.jar-reflection {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 60px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), transparent);
+  border-radius: 30px;
+  opacity: 0.7;
+}
+
+.jar-label {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  color: #764ba2;
+  border: 2px solid rgba(118, 75, 162, 0.3);
+}
+
+.jar-instructions {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  font-style: italic;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Memory Modal */
+.memory-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.memory-modal {
+  background: white;
+  border-radius: 25px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  animation: scaleIn 0.3s ease-out;
+  text-align: center;
+}
+
+.close-memory {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-memory:hover {
+  color: #333;
+}
+
+.memory-content {
+  padding: 1rem 0;
+}
+
+.memory-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounce 1s ease-out;
+}
+
+.memory-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.memory-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.memory-footer span {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.new-memory-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.new-memory-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-particle {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-10px) rotate(180deg); 
+    opacity: 1;
+  }
+}
+
+@keyframes shakeJar {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-10px) rotate(-2deg); }
+  20% { transform: translateX(10px) rotate(2deg); }
+  30% { transform: translateX(-10px) rotate(-2deg); }
+  40% { transform: translateX(10px) rotate(2deg); }
+  50% { transform: translateX(-5px) rotate(-1deg); }
+  60% { transform: translateX(5px) rotate(1deg); }
+  70% { transform: translateX(-5px) rotate(-1deg); }
+  80% { transform: translateX(5px) rotate(1deg); }
+  90% { transform: translateX(-2px) rotate(-0.5deg); }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .memory-jar-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .memory-jar-section .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .jar-lid {
+    width: 150px;
+    height: 25px;
+  }
+  
+  .jar-body {
+    width: 170px;
+    height: 220px;
+  }
+  
+  .memory-modal {
+    padding: 1.5rem;
+    margin: 20px;
+  }
+  
+  .memory-text {
+    font-size: 1.1rem;
+  }
+  
+  .memory-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
