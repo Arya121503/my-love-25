@@ -60,6 +60,13 @@ const Countdown = () => {
     });
   };
 
+  const handleLogout = () => {
+    if (window.confirm('Yakin ingin keluar dari dunia cinta kita? 💔')) {
+      localStorage.removeItem('loveStoryAuth');
+      window.location.reload();
+    }
+  };
+
   useEffect(() => {
     const messageTimer = setInterval(() => {
       setCurrentMessage(getRandomLoveMessage());
@@ -94,9 +101,14 @@ const Countdown = () => {
       <span className="countdown-note">
         {currentMessage}
       </span>
-      <button className="scroll-to-top-btn" onClick={scrollToTop}>
-        ⬆️ Kembali ke Atas
-      </button>
+      <div className="action-buttons">
+        <button className="scroll-to-top-btn" onClick={scrollToTop}>
+          ⬆️ Kembali ke Atas
+        </button>
+        <button className="logout-button" onClick={handleLogout}>
+          🚪 Keluar
+        </button>
+      </div>
     </div>
   );
 };

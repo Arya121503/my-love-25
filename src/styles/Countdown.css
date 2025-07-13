@@ -100,7 +100,6 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 2rem;
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 2;
@@ -111,4 +110,60 @@
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(204, 102, 0, 0.4);
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Logout button in countdown section */
+.logout-button {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-button:hover {
+  background: #dc3545;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness for action buttons */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .scroll-to-top-btn,
+  .logout-button {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
