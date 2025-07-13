@@ -285,6 +285,20 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .guest-book {
+    padding: 4rem 1rem;
+  }
+  
+  .guest-book h2 {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
   .guest-book-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -292,26 +306,92 @@
   
   .add-message-section {
     position: static;
+    order: 1;
   }
   
-  .guest-book h2 {
-    font-size: 2.5rem;
-  }
-  
-  .section-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .messages-display {
+    order: 2;
   }
   
   .message-form {
-    padding: 1.5rem;
+    padding: 1.2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
   }
   
   .form-buttons {
     flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .form-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .messages-container {
+    max-height: 60vh;
+  }
+  
+  .message-item {
+    padding: 1rem;
+  }
+  
+  .message-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .message-author {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .guest-book {
+    padding: 3rem 0.5rem;
+  }
+  
+  .guest-book h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .message-form {
+    padding: 1rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+  
+  .form-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
   }
   
   .messages-container {
     max-height: 50vh;
+  }
+  
+  .message-item {
+    padding: 0.8rem;
+  }
+  
+  .message-text {
+    font-size: 0.85rem;
+  }
+  
+  .message-author {
+    font-size: 0.75rem;
   }
 }

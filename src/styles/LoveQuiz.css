@@ -381,46 +381,147 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .love-quiz-section {
+    padding: 4rem 1rem;
+  }
+  
   .love-quiz-section h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .love-quiz-section .section-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 2rem;
+    padding: 0 1rem;
   }
   
   .quiz-preview {
-    padding: 2rem;
+    padding: 1.5rem 1rem;
+    margin: 0 0.5rem;
   }
   
   .quiz-features {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .feature-item {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+    margin-bottom: 0;
+  }
+  
+  .start-quiz-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: 90%;
+    max-width: 280px;
   }
   
   .quiz-container {
-    padding: 1.5rem;
+    padding: 1.2rem;
+    margin: 0 0.5rem;
   }
   
   .question-text {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .answer-option {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .quiz-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .quiz-btn {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
   
   .result-actions {
     flex-direction: column;
+    gap: 1rem;
   }
   
   .score-number {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .result-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .result-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .love-quiz-section {
+    padding: 3rem 0.5rem;
+  }
+  
+  .love-quiz-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .love-quiz-section .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .quiz-preview {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .feature-item {
+    padding: 0.8rem;
+  }
+  
+  .feature-icon {
+    font-size: 1.3rem;
+  }
+  
+  .start-quiz-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .quiz-container {
+    padding: 1rem;
+  }
+  
+  .question-text {
+    font-size: 1rem;
+  }
+  
+  .answer-option {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .quiz-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .score-number {
     font-size: 2rem;
+  }
+  
+  .result-header h2 {
+    font-size: 1.6rem;
   }
 }

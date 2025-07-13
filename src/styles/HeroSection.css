@@ -12,6 +12,65 @@
   overflow: hidden;
 }
 
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem 1rem;
+    min-height: 100vh;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem !important;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .hero-section button {
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+    margin-top: 1rem;
+  }
+  
+  .interactive-hint {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1rem 0.5rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section p {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-section button {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    width: 90%;
+    max-width: 280px;
+  }
+  
+  .interactive-hint {
+    font-size: 0.8rem !important;
+  }
+}
+
 /* Floating hearts animation */
 .hero-section::before {
   content: '';
