@@ -8,7 +8,6 @@ import LoveNotes from "./components/LoveNotes";
 import Countdown from "./components/Countdown";
 import ParticleBackground from "./components/ParticleBackground";
 import AudioManager from "./components/AudioManager";
-import GuestBook from "./components/GuestBook";
 import MemoryJar from "./components/MemoryJar";
 import LoveQuiz from "./components/LoveQuiz";
 
@@ -78,7 +77,6 @@ function App() {
       <LoveNotes />
       <MemoryJar />
       <LoveQuiz />
-      <GuestBook />
       <Countdown />
       <AudioManager />
     </>
