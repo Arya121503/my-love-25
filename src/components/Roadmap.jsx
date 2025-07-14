@@ -199,13 +199,41 @@ const Roadmap = () => {
     {
       id: 20,
       period: "Pasca UI",
-      age: "22+ tahun",
+      age: "22-23 tahun",
       title: "Next Level: NUS S2",
       description: "Lulus S1, melanjutkan S2 di NUS",
       icon: "🚀",
       color: "#00cec9",
       category: "education"
+    },
+    {
+      id: 21,
+      age: "24 tahun",
+      title: "Anomali: The Future",
+      description: "Diterima kerja di Bank Indonesia",
+      icon: "🏦",
+      color: "#00b894",
+      category: "career"
+    },
+    {
+      id: 22,
+      age: "24+ tahun",
+      title: "The Masterpiece",
+      description: "Lulus S2, siap mengukir prestasi baru",
+      icon: "🌈",
+      color: "#d63031",
+      category: "future"
+    },
+    {
+      id: 23,
+      age: "25+ tahun",
+      title: "Legacy in the Making",
+      description: "Membangun warisan yang menginspirasi generasi mendatang",
+      icon: "🏰",
+      color: "#6c5ce7",
+      category: "future"
     }
+
   ];
 
   useEffect(() => {
@@ -235,7 +263,10 @@ const Roadmap = () => {
       skill: "Keahlian",
       talent: "Bakat",
       organization: "Organisasi",
-      honor: "Kehormatan"
+      honor: "Kehormatan",
+      career: "Karir",
+      future: "Masa Depan"
+      
     };
     return labels[category] || category;
   };
@@ -281,7 +312,7 @@ const Roadmap = () => {
             <span className="stat-label">Pencapaian</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">18</span>
+            <span className="stat-number">24</span>
             <span className="stat-label">Tahun Perjalanan</span>
           </div>
           <div className="stat-item">
