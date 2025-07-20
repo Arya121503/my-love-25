@@ -10,6 +10,7 @@ import ParticleBackground from "./components/ParticleBackground";
 import AudioManager from "./components/AudioManager";
 import MemoryJar from "./components/MemoryJar";
 import LoveQuiz from "./components/LoveQuiz";
+import LDRDashboard from "./components/LDRDashboard";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -72,6 +73,7 @@ function App() {
     <>
       <ParticleBackground />
       <HeroSection onScrollToNext={scrollToNext} />
+      <LDRDashboard />
       <Timeline />
       <Roadmap />
       <LoveNotes />
