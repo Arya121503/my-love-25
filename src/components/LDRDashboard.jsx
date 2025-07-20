@@ -6,9 +6,6 @@ const LDRDashboard = () => {
     const [daysTogether, setDaysTogether] = useState(0);
     const [nextMeetingDate, setNextMeetingDate] = useState('');
     const [daysUntilMeeting, setDaysUntilMeeting] = useState(0);
-    const [virtualHugs, setVirtualHugs] = useState(0);
-    const [todayMood, setTodayMood] = useState('');
-    const [partnerMood, setPartnerMood] = useState('');
     const [showStartDateModal, setShowStartDateModal] = useState(false);
     const [showMeetingModal, setShowMeetingModal] = useState(false);
     const [tempDate, setTempDate] = useState('');
@@ -24,11 +21,11 @@ const LDRDashboard = () => {
         const R = 6371; // Radius bumi dalam km
         const dLat = (locations.depok.lat - locations.surabaya.lat) * Math.PI / 180;
         const dLon = (locations.depok.lng - locations.surabaya.lng) * Math.PI / 180;
-        const a = 
-            Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(locations.surabaya.lat * Math.PI / 180) * Math.cos(locations.depok.lat * Math.PI / 180) * 
-            Math.sin(dLon/2) * Math.sin(dLon/2);
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        const a =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(locations.surabaya.lat * Math.PI / 180) * Math.cos(locations.depok.lat * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return Math.round(R * c);
     };
 
@@ -54,16 +51,10 @@ const LDRDashboard = () => {
 
     // Load data dari localStorage
     useEffect(() => {
-        const savedHugs = localStorage.getItem('virtualHugs');
         const savedMeeting = localStorage.getItem('nextMeetingDate');
         const savedStartDate = localStorage.getItem('relationshipStartDate');
-        const savedTodayMood = localStorage.getItem('todayMood');
-        const savedPartnerMood = localStorage.getItem('partnerMood');
 
-        if (savedHugs) setVirtualHugs(parseInt(savedHugs));
         if (savedMeeting) setNextMeetingDate(savedMeeting);
-        if (savedTodayMood) setTodayMood(savedTodayMood);
-        if (savedPartnerMood) setPartnerMood(savedPartnerMood);
 
         // Hitung hari bersama
         if (savedStartDate) {
@@ -85,19 +76,6 @@ const LDRDashboard = () => {
             setDaysUntilMeeting(diffDays > 0 ? diffDays : 0);
         }
     }, [nextMeetingDate]);
-
-    const sendVirtualHug = () => {
-        const newHugCount = virtualHugs + 1;
-        setVirtualHugs(newHugCount);
-        localStorage.setItem('virtualHugs', newHugCount.toString());
-        
-        // Animasi hug
-        const hugButton = document.querySelector('.hug-button');
-        hugButton.classList.add('hug-sent');
-        setTimeout(() => {
-            hugButton.classList.remove('hug-sent');
-        }, 1000);
-    };
 
     const openMeetingModal = () => {
         setTempDate(nextMeetingDate || '');
@@ -138,24 +116,7 @@ const LDRDashboard = () => {
         setTempDate('');
     };
 
-    const updateMood = (mood, isYours = true) => {
-        if (isYours) {
-            setTodayMood(mood);
-            localStorage.setItem('todayMood', mood);
-        } else {
-            setPartnerMood(mood);
-            localStorage.setItem('partnerMood', mood);
-        }
-    };
 
-    const moodEmojis = {
-        happy: '😊',
-        love: '🥰',
-        miss: '😢',
-        excited: '🤩',
-        tired: '😴',
-        work: '💼'
-    };
 
     return (
         <div className="ldr-dashboard">
@@ -211,60 +172,7 @@ const LDRDashboard = () => {
                     </div>
                 </div>
 
-                {/* Virtual Hugs Card */}
-                <div className="dashboard-card hugs-card">
-                    <div className="card-icon">🤗</div>
-                    <h3>Virtual Hugs</h3>
-                    <div className="hugs-info">
-                        <p className="hugs-number">{virtualHugs}</p>
-                        <p>pelukan terkirim</p>
-                        <button onClick={sendVirtualHug} className="hug-button">
-                            Kirim Pelukan 💕
-                        </button>
-                    </div>
-                </div>
-
-                {/* Mood Tracker */}
-                <div className="dashboard-card mood-card">
-                    <div className="card-icon">😊</div>
-                    <h3>Mood Hari Ini</h3>
-                    <div className="mood-section">
-                        <div className="your-mood">
-                            <p>Mood Kamu:</p>
-                            <div className="current-mood">
-                                {todayMood ? moodEmojis[todayMood] : '❓'}
-                            </div>
-                            <div className="mood-buttons">
-                                {Object.entries(moodEmojis).map(([mood, emoji]) => (
-                                    <button 
-                                        key={mood}
-                                        onClick={() => updateMood(mood, true)}
-                                        className={`mood-btn ${todayMood === mood ? 'active' : ''}`}
-                                    >
-                                        {emoji}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="partner-mood">
-                            <p>Mood Pasangan:</p>
-                            <div className="current-mood">
-                                {partnerMood ? moodEmojis[partnerMood] : '❓'}
-                            </div>
-                            <div className="mood-buttons">
-                                {Object.entries(moodEmojis).map(([mood, emoji]) => (
-                                    <button 
-                                        key={mood}
-                                        onClick={() => updateMood(mood, false)}
-                                        className={`mood-btn ${partnerMood === mood ? 'active' : ''}`}
-                                    >
-                                        {emoji}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/* Quick Stats Card moved up to replace removed cards */}
 
                 {/* Quick Stats */}
                 <div className="dashboard-card stats-card">
@@ -349,7 +257,7 @@ const LDRDashboard = () => {
                             <div className="meeting-suggestions">
                                 <p>💡 Saran pertemuan:</p>
                                 <div className="suggestion-buttons">
-                                    <button 
+                                    <button
                                         onClick={() => {
                                             const nextWeek = new Date();
                                             nextWeek.setDate(nextWeek.getDate() + 7);
@@ -359,7 +267,7 @@ const LDRDashboard = () => {
                                     >
                                         Minggu Depan
                                     </button>
-                                    <button 
+                                    <button
                                         onClick={() => {
                                             const nextMonth = new Date();
                                             nextMonth.setMonth(nextMonth.getMonth() + 1);
